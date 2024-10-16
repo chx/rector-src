@@ -14,7 +14,6 @@ use Rector\Config\Level\TypeDeclarationLevel;
 use Rector\Config\RectorConfig;
 use Rector\Config\RegisteredService;
 use Rector\Configuration\Levels\LevelRulesResolver;
-use Rector\Configuration\Parameter\SimpleParameterProvider;
 use Rector\Console\Notifier;
 use Rector\Contract\Rector\ConfigurableRectorInterface;
 use Rector\Contract\Rector\RectorInterface;
@@ -31,7 +30,6 @@ use Rector\Symfony\Set\JMSSetList;
 use Rector\Symfony\Set\SensiolabsSetList;
 use Rector\Symfony\Set\SymfonySetList;
 use Rector\ValueObject\PhpVersion;
-use Rector\ValueObject\PhpVersionFeature;
 use Symfony\Component\Finder\Finder;
 use Webmozart\Assert\Assert;
 
@@ -117,11 +115,6 @@ final class RectorConfigBuilder
      * @var string[]
      */
     private array $phpstanConfigs = [];
-
-    /**
-     * @var null|PhpVersion::*
-     */
-    private ?int $phpVersion = null;
 
     private ?string $symfonyContainerXmlFile = null;
 
